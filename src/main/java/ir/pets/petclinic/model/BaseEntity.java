@@ -1,7 +1,12 @@
 package ir.pets.petclinic.model;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
 
+@Data
+@Entity
 public class BaseEntity implements Serializable {
     private Long id;
 

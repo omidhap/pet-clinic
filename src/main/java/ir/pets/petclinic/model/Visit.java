@@ -6,6 +6,5 @@ import javax.persistence.Entity;
 
 @Data
 @Entity
-public class Vet extends Person {
-
+public class Visit extends BaseEntity {
 }

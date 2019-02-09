@@ -1,18 +1,23 @@
 package ir.pets.petclinic.model;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
 import java.time.LocalDate;
 
+@Data
+@Entity
 public class Pet extends BaseEntity{
 
-    private PetType petType;
+    private String petType;
     private Owner owner;
     private LocalDate birthDate;
 
-    public PetType getPetType() {
+    public String getPetType() {
         return petType;
     }
 
-    public void setPetType(PetType petType) {
+    public void setPetType(String petType) {
         this.petType = petType;
     }
 
