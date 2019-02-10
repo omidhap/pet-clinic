@@ -1,16 +1,15 @@
 package ir.pets.petclinic.model;
 
-import lombok.Data;
-
-import javax.persistence.Entity;
+import java.io.Serializable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
+import lombok.Data;
 
 @Data
-@Entity
-public class BaseEntity implements Serializable {
+@MappedSuperclass
+public abstract class AbstractBaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

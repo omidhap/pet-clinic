@@ -1,13 +1,16 @@
 package ir.pets.petclinic.model;
 
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 import lombok.Data;
 
-import javax.persistence.Entity;
-
 @Data
-@Entity
-public class Person extends BaseEntity {
+@MappedSuperclass
+public class Person extends AbstractBaseEntity {
 
+    @NotBlank(message = "First name is required")
     private String firstName;
+
+    @NotBlank(message = "Last name is required")
     private String lastName;
 }

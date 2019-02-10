@@ -1,34 +1,44 @@
 package ir.pets.petclinic.services;
 
 import ir.pets.petclinic.model.Vet;
-import org.springframework.stereotype.Service;
-
+import ir.pets.petclinic.repositories.VetRepository;
+import java.util.HashSet;
 import java.util.Set;
+import org.springframework.stereotype.Service;
 
 @Service
 public class VetServiceImpl implements VetService {
+
+    private final VetRepository vetRepository;
+
+    public VetServiceImpl(VetRepository vetRepository) {
+        this.vetRepository = vetRepository;
+    }
+
     @Override
     public Set<Vet> findAll() {
-        return null;
+        Set<Vet> vets = new HashSet<>();
+        vetRepository.findAll().forEach(vets::add);
+        return vets;
     }
 
     @Override
-    public Vet findById(Long aLong) {
-        return null;
+    public Vet findById(Long id) {
+        return vetRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Vet save(Vet object) {
-        return null;
+    public Vet save(Vet vet) {
+        return vetRepository.save(vet);
     }
 
     @Override
-    public void delete(Vet object) {
-
+    public void delete(Vet vet) {
+        vetRepository.delete(vet);
     }
 
     @Override
-    public void deleteById(Long aLong) {
-
+    public void deleteById(Long id) {
+        vetRepository.deleteById(id);
     }
 }
