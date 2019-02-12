@@ -2,9 +2,14 @@ package ir.pets.petclinic.model;
 
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotBlank;
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
+
+@Getter
+@Setter
+@RequiredArgsConstructor
 @MappedSuperclass
 public class Person extends AbstractBaseEntity {
 

@@ -5,14 +5,18 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @Entity
 public class Vet extends Person {
 
-    private String telephone;
+    private String phoneNumber;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vet")
     private Set<Visit> visits = new HashSet<>();
