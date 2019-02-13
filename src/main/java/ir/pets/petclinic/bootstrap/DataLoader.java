@@ -2,6 +2,8 @@ package ir.pets.petclinic.bootstrap;
 
 import ir.pets.petclinic.model.Owner;
 import ir.pets.petclinic.model.Pet;
+import ir.pets.petclinic.model.Vet;
+import ir.pets.petclinic.model.Visit;
 import ir.pets.petclinic.services.OwnerService;
 import ir.pets.petclinic.services.PetService;
 import ir.pets.petclinic.services.VetService;
@@ -37,30 +39,30 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         Owner owner2 = new Owner();
 
-        owner1.setFirstName("1");
-        owner1.setLastName("1");
-        owner1.setAddress("1");
-        owner1.setCity("1");
-        owner1.setPhoneNumber("1");
+        owner1.setFirstName("ali");
+        owner1.setLastName("azimi");
+        owner1.setAddress("jomhoori");
+        owner1.setCity("tehran");
+        owner1.setPhoneNumber("09152345345");
 
-        owner2.setFirstName("2");
-        owner2.setLastName("2");
-        owner2.setAddress("2");
-        owner2.setCity("2");
-        owner2.setPhoneNumber("2");
+        owner2.setFirstName("amir");
+        owner2.setLastName("rezayi");
+        owner2.setAddress("jannat");
+        owner2.setCity("tehran");
+        owner2.setPhoneNumber("09376546797");
 
         Pet pet1 = new Pet();
         Pet pet2 = new Pet();
 
-        pet1.setName("a");
+        pet1.setName("jj");
         pet1.setBirthDate(LocalDate.now());
         pet1.setOwner(owner1);
-        pet1.setPetType("a");
+        pet1.setPetType("dog");
 
-        pet2.setName("b");
+        pet2.setName("luna");
         pet2.setBirthDate(LocalDate.now());
         pet2.setOwner(owner1);
-        pet2.setPetType("b");
+        pet2.setPetType("cat");
 
         owner1.getPets().add(pet1);
         owner1.getPets().add(pet2);
@@ -70,5 +72,25 @@ public class DataLoader implements CommandLineRunner {
 
         petService.save(pet1);
         petService.save(pet2);
+
+        Vet vet = new Vet();
+
+        vet.setFirstName("dr");
+        vet.setLastName("jam");
+        vet.setPhoneNumber("09123453675");
+
+        Visit visit = new Visit();
+
+        visit.setDate(LocalDate.now());
+        visit.setDescription("check up");
+        visit.setPet(pet1);
+        visit.setVet(vet);
+
+        pet1.getVisits().add(visit);
+        vet.getVisits().add(visit);
+
+        vetService.save(vet);
+
+        visitService.save(visit);
     }
 }

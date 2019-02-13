@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Visit Info</title>
+</head>
+<body>
+<h1>Visit Info</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Pet Id</th>
+    <th>Vet Id</th>
+    <th>Owner Id</th>
+    <th>Date</th>
+    <th>Description</th>
+  </tr>
+  <td th:text="${visit.id}">123</td>
+  <td th:text="${visit.pet.id}">Joe</td>
+  <td th:text="${visit.vet.id}">Buck</td>
+  <td th:text="${visit.pet.owner.id}">Buck</td>
+  <td th:text="${visit.date}">Buck</td>
+  <td th:text="${visit.description}">Buck</td>
+</table>
+
+</body>
+</html>

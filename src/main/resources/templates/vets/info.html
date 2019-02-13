@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Vet Info</title>
+</head>
+<body>
+<h1>Vet Info</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone number</th>
+  </tr>
+  <td th:text="${vet.id}">123</td>
+  <td th:text="${vet.firstName}">Joe</td>
+  <td th:text="${vet.lastName}">Buck</td>
+  <td th:text="${vet.phoneNumber}">Buck</td>
+</table>
+
+</body>
+</html>

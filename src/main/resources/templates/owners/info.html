@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Owner Info</title>
+</head>
+<body>
+<h1>Owner Info</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Phone Number</th>
+  </tr>
+  <td th:text="${owner.id}">123</td>
+  <td th:text="${owner.firstName}">Joe</td>
+  <td th:text="${owner.lastName}">Buck</td>
+  <td th:text="${owner.address}">Buck</td>
+  <td th:text="${owner.city}">Buck</td>
+  <td th:text="${owner.phoneNumber}">Buck</td>
+</table>
+
+<h2>Pets</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Owner Id</th>
+    <th>Type</th>
+    <th>Birth Date</th>
+  </tr>
+  <tr th:each="pet : ${owner.pets}">
+    <td th:text="${pet.id}">123</td>
+    <td th:text="${pet.name}">Buck</td>
+    <td th:text="${pet.owner.id}">Joe</td>
+    <td th:text="${pet.petType}">Buck</td>
+    <td th:text="${pet.birthDate}">Buck</td>
+  </tr>
+</table>
+
+</body>
+</html>

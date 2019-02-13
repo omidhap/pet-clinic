@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<h2>Find pet</h2>
+
+<form th:action="@{/pets/findById}" method="post" th:object="${searchedId}">
+  <div>
+    <h3>Enter id:</h3>
+    <input type="text" th:field="*{name}"/>
+
+    <br/>
+
+    <button>Submit</button>
+  </div>
+
+</form>
+
+
+</body>
+</html>
